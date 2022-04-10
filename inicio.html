@@ -1,0 +1,255 @@
+<!--Inicio HTML --> 
+<!DOCTYPE html>
+<html lang="es">
+<!--Cabecera de la Web --> 
+<head> 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--etiqueta HTML5 sirve para optimizar los sitios para móviles-->
+    <title>Comicteca</title>
+    <link rel="stylesheet" href="/css/styles1.css"> <!--Ubicación del fichero css-->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;900&display=swap" rel="stylesheet"> <!--Para incrustar las fuente desde google-->
+</head>
+
+<!--Cuerpo de la Web --> 
+<body>
+  <header> <!--Menu-->
+
+    <!--Contenedor para elmentos de navegación usado para la parte superior de logo y contactos-->
+    <nav class="menu-navegación-superior"> <!--Se aplica del css tambien el contenedor--> 
+      <div class="contenedor"> <!--Se aplica del css tambien el contenedor--> 
+
+        <!--Prueba efecto JS-->
+        <div class="round">
+        <img class="round-image js-round-hover"  
+        data-hover="https://c.tenor.com/afsQF364fVEAAAAM/marvel-comicbooks.gif"/>
+        </div>   
+        <h2 class="logo"><a href="/inicio.html">GerComics</a></h2>
+        <!--Prueba efecto JS-->
+
+        <div class="buscar">
+        <li><a href="#">Conocenos</a></li><!--etiqueta <a para hipervinculos-->
+        <li><a href="#">Productos</a></li><!--etiqueta <a para hipervinculos-->
+        <li><a href="#">Politica de privacidad</a></li><!--etiqueta a para hipervinculos-->        
+        </div>
+
+        <div class="inicio-sesion">
+              <li><a href="#formulario">Alta Usuario</a></li>
+              <li><a href="#">Iniciar Sesión</a></li>
+        </div>    
+      </div>  
+      </nav>
+    </header> 
+
+    <main>  
+
+  
+         <section class="contenedor">
+            <h2 class="titulo-novedades">Entra en nuestras distintas secciones</h2>
+            <p class="copy"> Sino encuentras algo llamanos</p>
+            <div class="secciones"><!--Creamos un flex-->
+              <div class="seccion-marvel"><!--Creamos un flex dentro-->
+              <h3>Marvel</h3>  
+            </div>
+              <div class="seccion-dc"><!--Creamos un flex dentro-->
+              <h3>DC Comics</h3>
+            </div>
+            <div class="seccion-europeo"><!--Creamos un flex dentro-->
+                <h3>Comics europeo</h3>
+            </div>
+            <div class="seccion-figura"><!--Creamos un flex dentro-->
+            <h3>Figuras</h3>  
+             </div>
+        </section> 
+
+        <!--Slider-->
+        <div class="contenedor-slide">        
+          
+          <div class="slide slide1 active ">
+            <span></span> 
+          </div>
+          
+          <div class="slide slide2">
+          </div>
+          
+          <div class="slide slide3">
+          </div>
+          
+          <div class="slide slide4">
+          </div>
+          
+          <div class="slide slide5">
+          </div>
+          
+          <div class="slide slide6">
+          </div> 
+
+          <div class="slide slide7">
+          </div> 
+
+          <div class="slide slide8">
+          </div> 
+
+          <div class="slide slide9">
+          </div> 
+
+          <div class="slide slide10">
+          </div> 
+        </div>  
+        <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+        <!--Slider-->
+
+        <div class="novedades-titulo">
+          <h2 class="titulo-novedades">Novedades</h2>
+          <p class="copy">Revisa nuestras últimas incorporaciones al mundo del cómics</p>
+        </div>
+
+        <div class="novedades">
+     
+              <div class="contenedor-imagenes">
+                    <img src="img/1.jpg" alt="">
+                    <img src="img/2.jpg" alt="">
+                    <img src="img/3.jpg" alt="">
+                    <img src="img/4.jpg" alt="">
+                    <img src="img/5.jpg" alt="">
+                    <img src="img/6.jpg" alt="">
+                    <img src="img/7.jpg" alt="">
+                    <img src="img/8.jpg" alt="">
+                    <img src="img/9.jpg" alt="">
+              </div>
+        </div>
+
+<!--Formulario con estilo css y validación JS-->  
+
+<div class="contact_form">
+  <h1>Registrate en Nuestra Web</h1>
+<h3>Forma parte de nuestra comunidad</h3>
+    <form action="" class="formulario" id="formulario"> <!--con el id accedo desde javasript al formulario-->
+      <!-- Grupo: Nombre -->
+      <div class="formulario__grupo" id="grupo__nombre"> <!--con el id accedo desde javasript al formulario-->
+        <label for="nombre" class="formulario__label">Nombre</label> <!--Pongo el Label y el id con el mimso nombre para cuando pinche sobre el label me lleve al id-->
+        <div class="formulario__grupo-input"> <!--Creo una clase para encerrar el input y el icono que quiero que aparezca cuando se haga la validacion -->
+          <input type="text" class="formulario__input" name="nombre" id="nombre" placeholder="Escribe tu nombre"> <!--con el id accedo desde javasript al formulario-->
+          <i class="formulario__validacion-estado fas fa-times-circle"></i><!--icono que nos va a permitir validar el estado, si esta mal mostrara el icono -->
+        </div>
+        <p class="formulario__input-error">El nombre tiene que ser de 1 a 16 dígitos y solo puede contener letras.</p> <!--error que queremos mostrar-->
+      </div>
+      <!-- FIN Grupo: Nombre -->
+
+      <!-- Grupo: Apellidos  -->
+      <div class="formulario__grupo" id="grupo__apellido">
+        <label for="apellido" class="formulario__label">Apellidos</label>
+        <div class="formulario__grupo-input">
+          <input type="text" class="formulario__input" name="apellido" id="apellido" placeholder="Escribe tus apellidos">
+          <i class="formulario__validacion-estado fas fa-times-circle"></i>
+        </div>
+        <p class="formulario__input-error">Tus apellidos tiene que ser de 1 a 50 dígitos y solo puede contener separados por espacio.</p>
+      </div>
+      <!-- FIN Grupo: Apellidos -->
+
+      <!-- Grupo: Correo Electronico -->
+      <div class="formulario__grupo" id="grupo__correo">
+        <label for="correo" class="formulario__label">Correo Electrónico</label>
+        <div class="formulario__grupo-input">
+          <input type="email" class="formulario__input" name="correo" id="correo" placeholder="correo@correo.com"><!--type= email para que el navegador tambien ayude a valdiar, podria ser tipo text sin problema-->
+
+          <i class="formulario__validacion-estado fas fa-times-circle"></i>
+        </div>
+        <p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
+      </div>
+      <!-- FIN Grupo: Correo Electronico -->
+
+      <!-- Grupo: Teléfono -->
+      <div class="formulario__grupo" id="grupo__telefono">
+        <label for="telefono" class="formulario__label">Teléfono</label>
+        <div class="formulario__grupo-input">
+          <input type="text" class="formulario__input" name="telefono" id="telefono" placeholder="917863469">
+          <i class="formulario__validacion-estado fas fa-times-circle"></i>
+        </div>
+        <p class="formulario__input-error">El telefono solo puede contener numeros y el maximo son 14 dígitos.</p>
+      </div>
+      <!-- FIN Grupo: Teléfono -->
+
+      <!-- Grupo: Asunto -->
+      <div class="formulario__grupo" id="grupo__asunto">
+        <label for="asunto" class="formulario__label">Asunto</label>
+        <div class="formulario__grupo-input">
+          <input type="text" class="formulario__input" name="asunto" id="asunto">
+          <i class="formulario__validacion-estado fas fa-times-circle"></i>
+        </div>
+        <p class="formulario__input-error">El asunto solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
+      </div>
+        <!-- FIN Grupo: asunto -->
+
+      <!-- Grupo: Mensaje -->
+      <div class="formulario__grupo" id="grupo__mensaje">
+        <label for="mensaje" class="formulario__label">Mensaje</label>
+        <div class="formulario__grupo-input">
+          <input type="text" class="formulario__input__mensaje" name="mensaje" id="mensaje">
+          <i class="formulario__validacion-estado fas fa-times-circle"></i>
+        </div>
+        <p class="formulario__input-error">El mensaje solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
+      </div>
+        <!-- FIN Grupo: mensaje -->
+
+      <div class="formulario__mensaje" id="formulario__mensaje">
+        <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
+      </div>
+
+      <div class="formulario__grupo formulario__grupo-btn-enviar">
+        <button type="submit" class="formulario__btn">Enviar</button>
+        <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
+      </div>
+
+    </form>
+  </div>
+  <!--FIN Formulario con estilo css y validación JS-->  
+
+    <!-- Testimonial -->  
+    <div class="testimonial-contenedor">
+      <div class="barra-proceso"></div>
+      <div class="fas fa-quote-right fa-quote"></div>
+      <div class="fas fa-quote-left fa-quote"></div>
+      <p class="testimonial">
+        Un cómic-documental simplemente espectacular, devoras las páginas, 
+        es digo de mención como los autores consiguen, con un tema a priori aburrido
+        y demasiado trillado, una novela apasionante y con un final que te llega 
+        a lo más hondo, imprescindible si eres amante del buen cómic de investigación 
+        y muy recomendable si simplemente te gusta leer una buena historia. 
+      </p>
+      <div class="user">
+        <img
+          src="https://i1.whakoom.com/large/3f/15/fadc469c9f45497a9db7e85a79b6ee10.jpg"
+          alt="user"
+          class="user-image"
+        />
+        <div class="usuario-detalle">
+          <h4 class="usuario">Daniel Fernández</h4>
+          <p class="titulo">La Bomba</p>
+        </div>
+      </div>
+  </div>
+  <!-- FIN Testimonial -->
+
+    </main>
+
+    <footer >
+      <h2 class="titulo-novedades">Contacta con nosotros</h2>
+            <div class="contenedor-footer">
+              <i class="fa fa-apple" id="apple"></i>
+              <i class="fa fa-twitter" id="twitter"></i>
+              <i class="fa fa-github-square github" id="github"></i>
+              <i class="fa fa-facebook-square" id="facebook"></i>
+            </div>
+
+    </footer>
+    <!--<script src="Web kit fontawaseome"-->
+    <script src="https://kit.fontawesome.com/7ee41845f3.js" crossorigin="anonymous"></script>
+
+<!--Ruta para cargar los script javasrcript-->
+<script src="js/nav.js"></script> 
+<script src="js/slider.js"></script>
+<script src="js/testinomial.js"></script>
+<script src="js/formulario.js"></script>
+<script src="js/prueba.js"></script>
+</body>
+</html>

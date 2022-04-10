@@ -1,0 +1,756 @@
+*{ /* Se aplica a toda la web, mientras no este definido en una clase, etiqueta etc*/
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/*pseudoclase root para usar su contenido como variable y lo podemos usar por todo el cs
+fácil para cambiar rapido los colores de toda la con estas variables*/
+:root{
+    --colorTextos: black;
+    --colorFondo: black;  
+    --paddingSecciones: 60px 0;
+    --marginElementos: 40px;
+    --background:linear-gradient(
+      149deg,
+      rgb(255, 254, 255) 0%,
+      rgb(247, 211, 6) 100%
+    );
+    --success-color: #2ecc71;
+    --error-color: #e74c3c;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  background: var(--background)
+}
+
+/*Se aplica todas las clases contenedor*/
+.contenedor{
+  width: 90%; /*Anchura del area del contenido*/
+  max-width: 1100px; /*Máximo ancho del contenido*/
+  margin: auto; /*Margenes*/
+  overflow: hidden;/*Ocultar el contenido que se desborda del contenerdor padre*/
+  padding: var(--paddingSecciones);/*establecer el mismo valor para todas las zonas de relleno de un elemento*/
+}
+
+/*Menu - header*/
+.menu-navegación-superior{
+  position: fixed; /*Para dejar fijo el menu de navegación*/ 
+  top: 0; /*Margen Superior*/
+  left: 0; /*Margen Izquierdo*/
+  right: 0; /*Margen Derecho*/
+  overflow: hidden;/*Ocultar el contenido que se desborda del contenerdor padre*/
+  padding: 100; /*Alineación*/
+  transition: all 0.3s ease-in-out; /*realiza la transición*/
+  background:linear-gradient(
+      149deg,
+      rgb(254, 253, 255) 0%,
+      rgb(14, 10, 5) 100%
+    );
+  box-shadow: 0 5px 1px rgba(247, 2, 2, 0.3);/* sombreado de la caja*
+  /*background-color: rgb(219, 170, 170); Color de fondo*/
+  /*justify-content: space-between; para definir el espacio entre lo items del contenedor, space-between quita los margenes de la izquierda*/
+  /*align-items: center; Alineación de los items centrada*/
+  /*height: 50px; Tamaño*/ 
+  /*display: flex; Para hacer Flex Box*/
+  /*margin: auto; Margenes*/
+  /*max-width: 1100px; Máximo ancho del contenido, si lo quito coge la amplitud de la página*/
+  /*border: 1px solid #d0d0d0; Para ponerle borde a la caja*/
+  /*width: 90%; Anchura del area del contenido*/
+}
+
+.menu-navegación-superior .contenedor {
+  display: flex; /*para realizar FlexBox*/
+  justify-content: space-between; /*define cómo el navegador distribuye el espacio entre y alrededor de los items flex, space-between: El primer item al inicio, el último al final*/
+  align-items: center; 
+  padding: 20px 0;
+  transition: all 0.3s ease-in-out; /*realiza la transición*/
+}
+
+.logo a{/*texto logo comicteca*/
+  color: rgb(70, 14, 173);
+  text-decoration: none;
+  padding: 7px 15px;
+  transition: all 0.3s ease-in-out;
+}
+
+.buscar li{
+  list-style-type: none;
+  align-items: center;
+  justify-content: center;
+  display: inline-block;/*para poner las listas en horizontal*/
+  transition: all 0.3s ease-in-out;
+}
+
+.buscar a{
+  color: #fff;
+  text-decoration: none;
+  padding: 7px 15px;
+  transition: all 0.3s ease-in-out;
+}
+
+.buscar a:hover{ /* para cuando paso por encima de la lista de los enlaces*/
+  text-decoration: underline;
+}
+.inicio-sesion li{
+  list-style: none;
+}
+
+.inicio-sesion  a{
+  color: #fff; 
+  text-decoration: none;
+  margin-left: 10px;
+}
+
+.inicio-sesion a:hover{ /* para cuando paso por encima de la lista*/
+  text-decoration: underline;
+}
+
+.menu-navegación-superior.active {
+  background:linear-gradient( /*para hacer un degradado cuando se active al bajar el srcoll*/
+      149deg,
+      rgb(247, 211, 6) 0%,
+      rgb(254, 253, 255) 100%
+    );
+  /*background-color: #fff;*/
+  box-shadow: 0 5px 1px rgba(2, 2, 2, 0.3);/* sombreado de la caja*/
+}
+
+.menu-navegación-superior.active a {
+  color: rgb(5, 5, 5);
+}
+
+.menu-navegación-superior .contenedor {
+  padding: 10px 0;
+}
+
+.menu-navegación-superior a.current,
+.menu-navegación-superior a:hover {
+  color: rgb(70, 14, 173);
+  font-weight: bold;
+}
+/*FIN Menu - header*/
+
+.contenedor-textos{
+  padding: 0;/*para jugar con los margenes*/
+  height: 100%;/*tamaño*/
+  display: flex;/*para hacer el flex box*/
+  flex-direction: column;/*direccion del flex*/
+  align-items: center;
+  justify-content: center;
+  color: black;
+  text-align: center;
+  flex-wrap: wrap /*Para que la cajas se ajusten segun se reduce la pagina o se vea en otros dispostivos*/
+}
+
+.descripcion h1{/*para dar formato a lo encabezados de dentro de descripcion*/
+  font-size: 60px;
+  font-weight: 700;
+}
+
+.descripcion p{
+  font-weight: 300;
+  font-size: 25px;
+  margin: 15px 0;
+  text-decoration: underline;
+}
+
+/*Main*/
+
+.titulo-novedades{
+    text-align: center;
+    font-size: 35px;
+    color: var(--colorFondo);
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+
+.copy{
+  text-align: center;
+  color: var(--colorTextos);
+  margin: 20px 0;
+  text-decoration: underline dotted;
+}
+
+.secciones{
+  padding-top: var(--marginElementos);
+  display: flex;/*para hacer el flex box*/
+  justify-content: space-evenly;/* Para espaciar de la misma forma todo lo que vaya dentro de beneficios*/
+  flex-wrap: wrap /*Para que la cajas se ajusten segun se reduce la pagina o se vea en otros dispostivos*/
+}
+
+.seccion-marvel{
+  font-size: 20px;
+  width: 10em;/*Anchura*/
+  height: 10em;/*Altura*/
+  background-image: url("../img/1.jpg");
+  background-size: cover;
+  background-position: center;
+  color: rgb(202, 18, 18);
+  display: flex;/*para hacer el flex box*/
+  align-items: center;
+  justify-content: center;
+  border-radius: 30%;/*De esta forma redondeamos la imagen*/
+  border-bottom:5px solid darkred;/*para realizar un bordeado de la caja*/
+}
+
+.seccion-dc{
+  font-size: 20px;
+  width: 10em;
+  height: 10em;
+  background-image: url("../img/dc.jpg");
+  background-size: cover;
+  background-position: center;
+  color: black;
+  display: flex;/*para hacer el flex box*/
+  align-items: center;
+  justify-content: center;
+  border-radius: 30%;/*De esta forma redondeamos la imagen*/
+  border-bottom:5px solid darkred;/*para realizar un bordeado de la caja*/
+}
+.seccion-europeo{
+  font-size: 20px;
+  width: 10em;
+  height: 10em;
+  background-image: url("../img/bomba.jpg");
+  background-size: cover;
+  background-position: center;
+  color: black;
+  display: flex;/*para hacer el flex box*/
+  align-items: center;
+  justify-content: center;
+  border-radius: 30%;/*De esta forma redondeamos la imagen*/
+  border-bottom:5px solid darkred;/*para realizar un bordeado de la caja*/
+}
+
+.seccion-figura{
+  font-size: 20px;
+  width: 10em;
+  height: 10em;
+  background-image: url("../img/old.jpg");
+  background-size: cover;
+  background-position: center;
+  color: rgb(202, 18, 18);
+  display: flex;/*para hacer el flex box*/
+  align-items: center;
+  justify-content: center;
+  border-radius: 30%;/*De esta forma redondeamos la imagen*/
+  border-bottom:5px solid darkred;/*para realizar un bordeado de la caja*/
+}
+
+/*Slider JavaSript*/
+*{
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+}
+body{
+  background-color:whitesmoke
+}
+.contenedor-slide{
+  width: 100%;
+  height: 400px;  
+  border-bottom:5px solid darkred;
+  display: flex;
+  margin: auto;
+  padding: 10px;
+  justify-content: center;
+  box-shadow: 0px 3px 15px
+}
+.slide{
+  min-width: 10px;
+  width: 50px;
+  height: 100%;
+  justify-content: center;
+  cursor: pointer;
+  margin: 0 10px;
+  border-radius: 50px;
+  display: flex;
+  align-items: flex-end;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 3px 3px 5px black; /*sombreado de la caja*/
+  opacity: .5; /*para rebajar la opacidad cuando no esta activo en el slide*/
+}
+
+.active{
+  flex-grow: 1;
+  transition-duration: 1s; /*tiempo de paso entre las fotos*/ 
+  opacity: 1;
+  padding: 0 10px;
+  border-radius: 25px;
+  padding-bottom: 10px
+}
+.nonActive{
+  flex-grow: 0;
+    opacity: .5
+}
+.slide:nth-of-type(1){
+  background-image: url('/img/slide1Leonardo+da+Vinci.png')
+}
+.slide:nth-of-type(2){
+  background-image: url('/img/slide2Newton.png')
+}
+.slide:nth-of-type(3){
+  background-image: url('/img/slide3Michelangelo+2.png')
+}
+.slide:nth-of-type(4){
+  background-image: url('/img/slide4Nostradamus.png')
+}
+.slide:nth-of-type(5){
+  background-image: url('/img/slide5Richards+and+Stark.png')
+}
+.slide:nth-of-type(6){
+  background-image: url('/img/slide5Newton+murders+Galileo.png')
+}
+.slide:nth-of-type(7){
+  background-image: url('/img/SHIELD+1.1+Galactus+in+Ancient+Italy.png')
+}
+.slide:nth-of-type(8){
+  background-image: url('/img/Shield8-600x911.jpg')
+}
+.slide:nth-of-type(9){
+  background-image: url('/img/slide9.jpg')
+}
+.slide:nth-of-type(10){
+  background-image: url('/img/slide10.jpg')
+}
+
+@media screen and (max-width: 700px) {
+  .slide{
+      width: 20px;
+  }
+  .active{
+      border-radius: 25px
+  }
+}
+/*Fin Slider JavaScript*/
+
+/*Seccion Novedades*/
+.novedades{
+  display: flex;
+  flex-wrap: wrap /*Para que la cajas se ajusten segun se reduce la pagina o se vea en otros dispostivos*/
+}
+
+.contenedor-imagenes{
+  width: 100%;
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+  margin: auto;
+  padding: 10px;
+  justify-content: space-between;
+  max-width: 1000px;/*tamaño máximo del contenedor*/
+}
+
+.contenedor-imagenes img{ /* añadimos "img"para hacer referencia a las imagenes que estan en el contenedor-imagenes*/
+  display: block;
+  width: 30%;
+  height: auto;
+  justify-content: space-evenly;/*Separacion entre imagenes*/
+  border-radius: 50px;/*Para redondear la foto*/
+  padding: 10px;/*separacion de altura entre fotos*/
+}
+
+/*Formulario*/
+.contact_form{  
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  padding: 10px;
+  justify-content: space-between;
+  max-width: 100%;/*tamaño máximo del contenedor*/
+}
+
+.formulario { /*dar formato al formulario*/
+  align-items: center;
+  box-shadow: 3px 3px 5px black; /*sombreado de la caja*/
+  width: 75%;
+}
+
+.formulario__label { /*la etiqueta*/
+	display: block; /*tipo bloque para que abarque el 100%*/
+	font-weight: 700;
+	padding: 10px;
+	cursor: pointer; /*para poder pinchar sobre el label y que nos lleve al input para escribir */
+}
+
+.formulario__grupo-input {
+	position: relative;
+}
+
+.formulario__input {
+	width: 100%;
+	background: #fff;
+	border: 3px solid transparent;
+	border-radius: 50px;
+	height: 45px;
+	line-height: 50px;
+	padding: 0 40px 0 10px;
+	transition: .3s ease all;
+}
+
+.formulario__input__mensaje {
+	width: 100%;
+	background: #fff;
+	border: 3px solid transparent;
+	border-radius: 50px;
+	height: 90px;
+	line-height: 50px;
+	padding: 0 40px 0 10px;
+	transition: .3s ease all;
+}
+
+.formulario__input:focus {/*Formato cuando estamos dentro del caudro de texto seleccionado*/
+	border: 3px solid #0075FF;
+	outline: none;
+	box-shadow: 3px 0px 30px rgba(8, 8, 8, 0.4);
+}
+
+.formulario__input-error {
+	font-size: 12px;
+	margin-bottom: 0;
+	display: none; /*para que desaparezca el label de error y solo se cuando sea un error*/
+}
+
+.formulario__input-error-activo { /*de esta forma se mostrara el mensaje de error que estaba oculto*/
+	display: block;
+}
+
+.formulario__validacion-estado {/*icono de error*/
+	position: absolute;
+	right: 10px;
+	bottom: 15px;
+	z-index: 100;
+	font-size: 16px;
+	opacity: 0;
+}
+
+.formulario__checkbox { /*para que aparezca la imagen a la derecha de la casilla del formulario indicando si está correcto o no con un fab*/
+	margin-right: 10px; 
+}
+
+.formulario__mensaje {/*Fomato para el mensaje de error en la validacion*/
+	height: 45px;
+	line-height: 45px;
+	background: #f80404;
+	padding: 0 15px;
+	border-radius: 3px;
+	display: none;
+}
+
+.formulario__mensaje-activo {
+	display: block;
+}
+
+.formulario__mensaje p {
+	margin: 0;
+}
+
+.formulario__grupo-btn-enviar {/*Flex para la caja del boton enviar*/
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.formulario__btn {/*formato de boton enviar*/
+	height: 45px;
+	line-height: 45px;
+	width: 30%;
+	background: #000;
+	color: #fff;
+	font-weight: bold;
+	border-radius: 3px;
+	cursor: pointer;
+	transition: .1s ease all; 
+  text-transform: uppercase;
+  border-color: white; 
+  border-style: solid; 
+  border-radius: 10px;  
+  cursor: pointer;
+}
+
+.formulario__btn:hover { /*Sombreado cuando pasamos el cursor por el boton enviar*/
+	box-shadow: 3px 0px 30px rgba(163,163,163, 1);
+}
+
+.formulario__mensaje-exito { /*Oculto: mensaje para que informa que el formulario esta correctamente validado*/
+	font-size: 25px;
+	color: #010700;
+	display: none;
+  background-color: #119200;
+  border-radius: 25%;
+  border-color: #119200;
+}
+
+.formulario__mensaje-exito-activo { /*se activa el mensaje*/
+	display: block;
+}
+
+/* ----- -----  Estilos para Validacion ----- ----- */
+.formulario__grupo-correcto .formulario__validacion-estado {/*Para avisar cuando esta correcto*/
+	font-size: 14px;
+	color: #1ed12d;
+	opacity: 1;
+}
+
+.formulario__grupo-incorrecto .formulario__label {/*Para avisar cuando esta incorrecto*/
+	color: #bb2929;
+}
+
+.formulario__grupo-incorrecto .formulario__validacion-estado {/*Para avisar cuando esta incorrecto*/
+	color: #bb2929;
+	opacity: 1;
+}
+
+.formulario__grupo-incorrecto .formulario__input {/*Para avisar cuando esta incorrecto*/
+	border: 3px solid #bb2929;
+}
+
+/*FIN Formulario*/
+
+/*Testimonial*/
+.testimonial-contenedor {
+  background-color: #080808;
+  color: rgb(247, 211, 6);
+  border-radius: 15px;
+  margin: 20px auto;
+  padding: 50px 80px;
+  max-width: 75%;
+  position: relative;
+}
+
+.fa-quote { /*para modificar las " ..." de fa */
+  color: rgba(247, 211, 6);
+  font-size: 28px;
+  position: absolute;
+  top: 70px;
+}
+
+.fa-quote-right {/*posicion fa " " derecha*/
+  left: 40px;
+}
+
+.fa-quote-left {/*posicion fa " " izquierda*/
+  right: 40px;
+}
+
+.testimonial {/*separacion y formato entre linea del texto dentro de los testimonios*/
+  line-height: 20px;
+  text-align: justify;
+  color: rgba(247, 211, 6); /* modificar el color de texto para que no coja el asignado por"*" */
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user .user-image { /*para formatear la imagen del usuario*/
+  border-radius: 50%;
+  height: 75px;
+  width: 75px;
+  object-fit: cover;
+}
+
+.user .usuario-detalle {
+  margin-left: 10px;
+}
+
+.user .usuario {
+  margin: 0;
+}
+
+.user .titulo {
+  font-weight: normal;
+  margin: 10px 0;
+  color: rgba(247, 211, 6); /* modificar el color de texto para que no coja el asignado por"*" */
+}
+
+.barra-proceso { /* barra de proceso para el siguiente testimonio*/
+  background-color: rgba(247, 211, 6);
+  height: 4px;
+  width: 100%;
+  animation: grow 10s linear infinite;
+  transform-origin: left;
+}
+
+@keyframes grow {
+  0% {
+    transform: scaleX(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .testimonial-contenedor {
+    padding: 20px 30px;
+  }
+
+  .fa-quote {
+    display: none;
+  }
+}
+/*FIN Testimonial*/
+
+footer{/*Sin punto porque es una etiqueta hTML5*/
+
+  background-position: center;
+  background-size: cover;
+  border: 1px solid #d0d0d0; /*Para ponerle borde a la caja*/
+}
+
+footer .titulo-novedades/*para cambiar el color de la letra en el footer y que no coja la que esta en titulo-seccion y copy*/
+footer .copy{
+    color: white;
+}
+
+.redes-sociales{
+  padding-top: var(--marginElementos);
+  width: 80%;
+  display: flex;
+  margin: auto;
+  justify-content: space-evenly;
+  flex-wrap: wrap /*Para que la cajas se ajusten segun se reduce la pagina o se vea en otros dispostivos*/
+}
+
+.contenedor-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 25vh;
+  width: 100vw;
+  flex-wrap: wrap /*Para que la cajas se ajusten segun se reduce la pagina o se vea en otros dispostivos*/
+}
+#apple,
+#twitter,
+#github,
+#facebook {
+  font-size: 3em; /*tamaño de los iconos */
+  background-color: #18191f;
+  color: #fff;
+  box-shadow: 2px 2px 2px #00000080, 10px 1px 12px #00000080,
+    2px 2px 10px #00000080, 2px 2px 3px #00000080, inset 2px 2px 10px #00000080,
+    inset 2px 2px 10px #00000080, inset 2px 2px 10px #00000080,
+    inset 2px 2px 10px #00000080;
+  border-radius: 29px;
+  padding: 11px 19px;
+  margin: 0 40px;
+  animation: animate 3s linear infinite;
+  text-shadow: 0 0 50px #0072ff, 0 0 100px #0072ff, 0 0 150px #0072ff,
+    0 0 200px #0072ff;
+}
+#twitter {
+  animation-delay: 0.3s;
+}
+#facebook {
+  animation-delay: 0.7s;
+}
+#github {
+  animation-delay: 0.1s;
+}
+
+@keyframes animate {
+  from {
+    filter: hue-rotate(0deg);
+  }
+  to {
+    filter: hue-rotate(360deg);
+  }
+}
+
+
+
+/*Media Query para que la web se adapte o no se deforme al reducirla*/
+/*Se podria tener varias media Query para 400px por ejemplo*/
+@media screen and (max-width:800px){
+  .menu-navegación-superior{
+      flex-direction: column;
+      height: 120px;
+      justify-content: space-evenly;
+  }
+
+  .hero h1{
+    font-size: 38px;
+  }
+
+  .beneficio{
+    margin-bottom: var(--marginElementos);
+  }
+
+  .contenedor-imagenes{
+    margin-bottom: var(--marginElementos);
+  }
+
+  .contenedor-imagenes img{
+    width: 40%;
+  }
+  
+  .contenedor-footer{
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  .contenedor-footer i{
+      margin-bottom: 20px;
+      justify-content: space-evenly;
+      flex-direction: column;
+  }
+
+  .contact_form{
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+  }
+
+  .testimonial-contenedor{
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.fas fa-quote-right fa-quote
+
+.redes-sociales{
+  flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+}
+/*FIN Media Query*/
+
+/*Pruebas*/
+.form-control.success input {
+  border-color: var(--success-color);
+}
+
+.form-control.error input {
+  border-color: var(--error-color);
+}
+
+/*testimonial: https://codepen.io/md-aqil/pen/abOVOKe*/ 
+
+.round{
+  background:#e2003b;
+  display:inline-block;
+  width:80px;
+  height:80px;
+  border-radius:50%;
+  position:relative;
+}
+
+
+.round-image{
+  border-radius:50%;
+  width:80px;
+  height:80px;
+  position:absolute;
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
