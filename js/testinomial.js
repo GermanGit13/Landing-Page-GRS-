@@ -1,3 +1,4 @@
+//declara las variables que son llamadas desde para ir cambiando las imagenes y los texteos 
 const testimonialsContainer = document.querySelector('.testimonials-container')
 const testimonial = document.querySelector('.testimonial')
 const userImage = document.querySelector('.user-image')
@@ -13,6 +14,7 @@ const testimonials = [
     text:
       "Vértigo en su gran expresión. Transgresora e irreverente a partes iguales. Todo aliñado con muy mala baba, con un humor del mas negro que se pueda imaginar. Y sin embargo hay que reconocer que nada es gratuito y que todo encaja como un guante, tanto la delirante e imaginativa historia, como los deliciosos personajes que pueblan este comic.",
   },
+
   {
     name: 'Daniel Castañeda',
     tittle: 'Escuadrón Suicida: Renacimiento',
@@ -20,6 +22,7 @@ const testimonials = [
     text:
     "Guión bastante previsible pero entretenido. Buen dibujo en general. Si eres fan de Escuadrón Suicida como es mi caso lo recomiendo, seguiré leyendo los demás.",
   },
+
   {
     name: 'David Pérez',
     tittle: 'Ala Triste',
@@ -27,6 +30,7 @@ const testimonials = [
     text:
     "Reedición de la primera novela de la serie de Alatriste adaptada al cómic por el maestro Carlos Giménez y Joan Mundet. Se conmemoran 20 años de la publicación del primer libro de la serie del capitán Alatriste.",
   },
+
   {
     name: 'Ismael Fernández',
     tittle: 'Conan Rey Integral',
@@ -37,9 +41,9 @@ const testimonials = [
 ]
 
 let idx = 1
-
+//funcion para actualizar los campos de los testimonios 
 function updateTestimonial() {
-  const { name, tittle, photo, text } = testimonials[idx]
+  const { name, tittle, photo, text } = testimonials[idx] //le pasamos las constantes creadas anteriormente
 
   testimonial.innerHTML = text
   userImage.src = photo

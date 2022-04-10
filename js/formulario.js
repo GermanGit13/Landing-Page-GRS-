@@ -4,7 +4,7 @@ const inputs = document.querySelectorAll('#formulario input'); //donde almacenad
 const expresiones = {
 	nombre: /^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]{1,40}$/, // Letras y espacios, pueden llevar acentos. Minimo 1 caracteres maximo 16 y la ñ
 	apellido: /^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]{1,40}$/, // Letras y espacios, pueden llevar acentos. Minimo 1 caracteres maximo 16
-	correo: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,4}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+	correo: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,4}\.[0-9]{1,4}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
 	telefono: /^\d{7,14}$/, // 7 a 14 numeros.
 	asunto: /^[a-zA-ZÀ-ÿ0-9\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ0-9\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ0-9\u00f1\u00d1]{1,40}$/, // Letras, espacios, números pueden llevar acentos. Minimo 1 caracteres maximo 16 y la ñ
 	mensaje: /^[a-zA-ZÀ-ÿ0-9\u00f1\u00d1\_\]+(\s*[a-zA-ZÀ-ÿ0-9\u00f1\u00d1\_\]*)*[a-zA-ZÀ-ÿ0-9\u00f1\u00d1]{1,40}$/ // Letras y espacios, números y guión bajo pueden llevar acentos. Minimo 1 caracteres maximo 16 y la ñ

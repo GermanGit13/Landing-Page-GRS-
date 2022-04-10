@@ -74,6 +74,28 @@ body {
   transition: all 0.3s ease-in-out;
 }
 
+.round{
+  background:#e2003b;
+  display:inline-block;
+  width:80px;
+  height:80px;
+  border-radius:50%;
+  position:relative;
+}
+
+
+.round-image{
+  border-radius:50%;
+  width:80px;
+  height:80px;
+  position:absolute;
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
 .buscar li{
   list-style-type: none;
   align-items: center;
@@ -733,24 +755,3 @@ footer .copy{
 
 /*testimonial: https://codepen.io/md-aqil/pen/abOVOKe*/ 
 
-.round{
-  background:#e2003b;
-  display:inline-block;
-  width:80px;
-  height:80px;
-  border-radius:50%;
-  position:relative;
-}
-
-
-.round-image{
-  border-radius:50%;
-  width:80px;
-  height:80px;
-  position:absolute;
-  left:0;
-  top:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
